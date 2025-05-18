@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-4xl mx-auto p-6">
+        <div class="flex items-center gap-6 mb-8">
+            <div class="w-24 h-24 rounded-full bg-sky-200 overflow-hidden">
+                <img src="https://placehold.co/100x100" alt="Profile" class="w-full h-full object-cover">
+            </div>
+            <div>
+                <h1 class="text-4xl font-bold mb-1">Alex Johnson</h1>
+                <p class="text-gray-600">Frontend Developer</p>
+            </div>
+        </div>
+
+        <div class="border-b border-gray-200 mb-8">
+            <nav class="flex gap-8">
+                <button class="tab-btn px-4 py-2 text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-blue-500 active" data-tab="experience">
+                    Experience
+                </button>
+                <button class="tab-btn px-4 py-2 text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-blue-500" data-tab="frontlines">
+                    Frontlines
+                </button>
+                <button class="tab-btn px-4 py-2 text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-blue-500" data-tab="contacts">
+                    Contacts
+                </button>
+            </nav>
+        </div>
+
+        <div class="grid grid-cols-3 gap-8">
+            <div class="col-span-2">
+                <div id="experience" class="tab-content active">
+                    <h2 class="text-xl font-semibold mb-4">Experience</h2>
+                    <p>Details about your work experience...</p>
+                </div>
+
+                <div id="frontlines" class="tab-content">
+                    <h2 class="text-xl font-semibold mb-4">Projects</h2>
+                    <p>Details about your projects...</p>
+                </div>
+
+                <div id="contacts" class="tab-content">
+                    <h2 class="text-xl font-semibold mb-4">Contact Information</h2>
+                    <p>Email: <a href="mailto:contact@example.com">contact@example.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.tab-btn').click(function() {
+                $('.tab-btn').removeClass('active border-blue-500').addClass('border-transparent');
+                $('.tab-content').removeClass('active');
+
+                $(this).addClass('active border-blue-500');
+                $('#' + $(this).data('tab')).addClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
