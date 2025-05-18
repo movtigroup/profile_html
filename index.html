@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Page</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-4xl mx-auto p-6">
+        <!-- Profile Header -->
+        <div class="flex items-center gap-6 mb-8">
+            <div class="w-24 h-24 rounded-full bg-sky-200 overflow-hidden">
+                <img src="https://placehold.co/100x100" alt="Profile" class="w-full h-full object-cover">
+            </div>
+            <div>
+                <h1 class="text-4xl font-bold mb-1">Portfolio</h1>
+                <p class="text-gray-600">Frontend Developer</p>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="border-b border-gray-200 mb-8">
+            <nav class="flex gap-8">
+                <button class="tab-btn px-4 py-2 text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-blue-500 active" data-tab="experience">
+                    <i class="fas fa-briefcase mr-2"></i>Experience
+                </button>
+                <button class="tab-btn px-4 py-2 text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-blue-500" data-tab="frontlines">
+                    <i class="fas fa-code mr-2"></i>Frontlines
+                </button>
+                <button class="tab-btn px-4 py-2 text-gray-600 hover:text-gray-900 border-b-2 border-transparent hover:border-blue-500" data-tab="contacts">
+                    <i class="fas fa-address-book mr-2"></i>Contacts
+                </button>
+            </nav>
+        </div>
+
+        <!-- Content Sections -->
+        <div class="grid grid-cols-3 gap-8">
+            <!-- Main Content -->
+            <div class="col-span-2">
+                <!-- Experience Tab Content -->
+                <div id="experience" class="tab-content active">
+                    <div class="mb-8">
+                        <h2 class="text-xl font-semibold mb-4">Skills</h2>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="flex items-center gap-2 bg-blue-100 px-4 py-2 rounded-lg">
+                                <div class="w-8 h-8">
+                                    <svg viewBox="0 0 24 24" class="w-full h-full text-blue-600">
+                                        <path fill="currentColor" d="M12 10.11c1.03 0 1.87.84 1.87 1.89 0 1-.84 1.85-1.87 1.85s-1.87-.85-1.87-1.85c0-1.05.84-1.89 1.87-1.89M7.37 20c.63.38 2.01-.2 3.6-1.7-.52-.59-1.03-1.23-1.51-1.9-.82-.08-1.63-.2-2.4-.36-.51 2.14-.32 3.61.31 3.96m.71-5.74l-.29-.51c-.11.29-.22.58-.29.86.27.06.57.11.88.16l-.3-.51m6.54-.76l.81-1.5-.81-1.5c-.3-.53-.62-1-.91-1.47C13.17 9.03 12.6 9 12 9c-.6 0-1.17.03-1.71.08-.29.47-.61.94-.91 1.47L8.57 12l.81 1.5c.3.53.62 1 .91 1.47.54.05 1.11.08 1.71.08.6 0 1.17-.03 1.71-.08.29-.47.61-.94.91-1.47M12 6.78c-.19.22-.39.45-.59.72h1.18c-.2-.27-.4-.5-.59-.72m0 10.44c.19-.22.39-.45.59-.72h-1.18c.2.27.4.5.59.72M16.62 4c-.62-.38-2 .2-3.59 1.7.52.59 1.03 1.23 1.51 1.9.82.08 1.63.2 2.4.36.51-2.14.32-3.61-.32-3.96m-.7 5.74l.29.51c.11-.29.22-.58.29-.86-.27-.06-.57-.11-.88-.16l.3.51m1.45-7.05c1.47.84 1.63 3.05 1.01 5.63 2.54.75 4.37 1.99 4.37 3.68 0 1.69-1.83 2.93-4.37 3.68.62 2.58.46 4.79-1.01 5.63-1.46.84-3.45-.12-5.37-1.95-1.92 1.83-3.91 2.79-5.38 1.95-1.46-.84-1.62-3.05-1-5.63-2.54-.75-4.37-1.99-4.37-3.68 0-1.69 1.83-2.93 4.37-3.68-.62-2.58-.46-4.79 1-5.63 1.47-.84 3.46.12 5.38 1.95 1.92-1.83 3.91-2.79 5.37-1.95M17.08 12c.34.75.64 1.5.89 2.26 2.1-.63 3.28-1.53 3.28-2.26 0-.73-1.18-1.63-3.28-2.26-.25.76-.55 1.51-.89 2.26M6.92 12c-.34-.75-.64-1.5-.89-2.26-2.1.63-3.28 1.53-3.28 2.26 0 .73 1.18 1.63 3.28 2.26.25-.76.55-1.51.89-2.26m9 2.26l-.3.51c.31-.05.61-.1.88-.16-.07-.28-.18-.57-.29-.86l-.29.51m-2.89 4.04c1.59 1.5 2.97 2.08 3.59 1.7.64-.35.83-1.82.32-3.96-.77.16-1.58.28-2.4.36-.48.67-.99 1.31-1.51 1.9M8.08 9.74l.3-.51c-.31.05-.61.1-.88.16.07.28.18.57.29.86l.29-.51m2.89-4.04C9.38 4.2 8 3.62 7.37 4c-.63.35-.82 1.82-.31 3.96.77-.16 1.58-.28 2.4-.36.48-.67.99-1.31 1.51-1.9z"/>
+                                    </svg>
+                                </div>
+                                <span>React</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-red-100 px-4 py-2 rounded-lg">
+                                <img src="https://www.gstatic.com/images/branding/product/2x/google_apps_64dp.png" class="w-8 h-8" alt="Google">
+                                <span>Google</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-lg">
+                                <span>CSS</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h2 class="text-xl font-semibold mb-4">Tailwind CSS</h2>
+                        <p class="text-gray-600 mb-4">
+                            Experienced in frontend development with a strong focus on responsive design and modern CSS frameworks.
+                            Proficient in implementing complex UI components and maintaining clean, efficient code.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-semibold mb-4">Work Experience</h2>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h3 class="font-medium">Frontend Developer</h3>
+                            <p class="text-gray-600">2020 - Present</p>
+                            <p class="mt-2">
+                                Working on various frontend projects using modern technologies and best practices.
+                                Implementing responsive designs and maintaining high-quality code standards.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frontlines Tab Content -->
+                <div id="frontlines" class="tab-content">
+                    <h2 class="text-xl font-semibold mb-4">Frontend Projects</h2>
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h3 class="font-medium">Project 1</h3>
+                            <p class="text-gray-600">React, Tailwind CSS</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h3 class="font-medium">Project 2</h3>
+                            <p class="text-gray-600">Vue.js, SCSS</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contacts Tab Content -->
+                <div id="contacts" class="tab-content">
+                    <h2 class="text-xl font-semibold mb-4">Contact Information</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <span class="text-gray-600">Email:</span>
+                            <a href="mailto:contact@example.com" class="text-blue-600">contact@example.com</a>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-gray-600">LinkedIn:</span>
+                            <a href="#" class="text-blue-600">linkedin.com/in/portfolio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-span-1">
+                <div class="bg-white p-4 rounded-lg shadow-sm mb-4">
+                    <h2 class="text-lg font-semibold mb-4">Skills</h2>
+                    <div class="space-y-2">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>React</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="h-2 bg-gray-200 rounded">
+                                <div class="h-2 bg-blue-500 rounded" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>CSS</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="h-2 bg-gray-200 rounded">
+                                <div class="h-2 bg-blue-500 rounded" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 rounded-lg shadow-sm">
+                    <h2 class="text-lg font-semibold mb-4">Projects</h2>
+                    <ul class="space-y-2 text-gray-600">
+                        <li>Project 1</li>
+                        <li>Project 2</li>
+                        <li>Project 3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.tab-btn').click(function() {
+                // Remove active class from all buttons and contents
+                $('.tab-btn').removeClass('active border-blue-500').addClass('border-transparent');
+                $('.tab-content').removeClass('active');
+
+                // Add active class to clicked button and corresponding content
+                $(this).addClass('active border-blue-500');
+                $('#' + $(this).data('tab')).addClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
